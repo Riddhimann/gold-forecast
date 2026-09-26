@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+build/
+dist/
+.env
+.env.*
+!.env.example
+.tools/
+.browser/
+*.log
+artifacts/models/
+artifacts/smoke/
+# Original submissions remain local (title pages include student identifiers).
+/*.tex
+/*.pdf
+/*.png
+.ipynb_checkpoints/

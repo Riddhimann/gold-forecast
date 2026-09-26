@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gold-forecast-lab"
+version = "1.0.0"
+description = "Reproducible gold-proxy forecasting with ensembles and classical time-series models"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.2,<3", "pandas>=2.2,<3", "scipy>=1.15,<2",
+  "scikit-learn>=1.6,<1.7", "statsmodels>=0.14.4,<0.15",
+  "matplotlib>=3.10,<4", "joblib>=1.4,<2", "streamlit>=1.51,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.4,<9", "ruff>=0.16,<0.17"]
+
+[project.scripts]
+gold-forecast = "gold_forecast.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["gold_forecast*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]

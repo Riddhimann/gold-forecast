@@ -1,0 +1,186 @@
+{
+  "data_sha256": "a7c9b1475b0b85eae5def5842639093e5e9f70f349cde9edaaa74503e6241470",
+  "rows": 2271,
+  "start": "2008-01-02",
+  "end": "2018-05-16",
+  "train_end": "2016-04-13",
+  "test_start": "2016-04-14",
+  "cutoff_index": 1816,
+  "seed": 42,
+  "quick": false,
+  "horizons": [
+    1,
+    5,
+    20
+  ],
+  "feature_policy": "Market-only origin values plus causal GLD history; macro only in paper reconstruction",
+  "protocol": "80/20 chronological; 3 expanding development folds; gap=h-1 for direct ML; frozen parameters on holdout",
+  "selected_models": {
+    "Ridge/h1": {
+      "parameters": {
+        "ridge__alpha": 1.0
+      },
+      "cv_mae": 1.54712173757981
+    },
+    "Decision Tree/h1": {
+      "parameters": {
+        "ccp_alpha": 0.02,
+        "max_depth": null,
+        "min_samples_leaf": 1
+      },
+      "cv_mae": 10.508157857232613
+    },
+    "Bagging/h1": {
+      "parameters": {
+        "estimator__min_samples_leaf": 1,
+        "n_estimators": 12
+      },
+      "cv_mae": 10.405693668526784
+    },
+    "Random Forest/h1": {
+      "parameters": {
+        "max_features": 1.0,
+        "min_samples_leaf": 1,
+        "n_estimators": 30
+      },
+      "cv_mae": 10.358318818874004
+    },
+    "Gradient Boosting/h1": {
+      "parameters": {
+        "learning_rate": 0.1,
+        "max_depth": 2,
+        "n_estimators": 50
+      },
+      "cv_mae": 9.806908090193229
+    },
+    "Ridge/h5": {
+      "parameters": {
+        "ridge__alpha": 100.0
+      },
+      "cv_mae": 4.068711840853357
+    },
+    "Decision Tree/h5": {
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "max_depth": 3,
+        "min_samples_leaf": 1
+      },
+      "cv_mae": 13.645329375785138
+    },
+    "Bagging/h5": {
+      "parameters": {
+        "estimator__min_samples_leaf": 1,
+        "n_estimators": 50
+      },
+      "cv_mae": 12.942155071215508
+    },
+    "Random Forest/h5": {
+      "parameters": {
+        "max_features": 1.0,
+        "min_samples_leaf": 1,
+        "n_estimators": 30
+      },
+      "cv_mae": 12.822644542605019
+    },
+    "Gradient Boosting/h5": {
+      "parameters": {
+        "learning_rate": 0.1,
+        "max_depth": 2,
+        "n_estimators": 50
+      },
+      "cv_mae": 12.247571495946275
+    },
+    "Ridge/h20": {
+      "parameters": {
+        "ridge__alpha": 100.0
+      },
+      "cv_mae": 10.000433889961355
+    },
+    "Decision Tree/h20": {
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "max_depth": null,
+        "min_samples_leaf": 5
+      },
+      "cv_mae": 16.990604999895734
+    },
+    "Bagging/h20": {
+      "parameters": {
+        "estimator__min_samples_leaf": 1,
+        "n_estimators": 12
+      },
+      "cv_mae": 17.06903525406657
+    },
+    "Random Forest/h20": {
+      "parameters": {
+        "max_features": "sqrt",
+        "min_samples_leaf": 1,
+        "n_estimators": 30
+      },
+      "cv_mae": 16.678518514839837
+    },
+    "Gradient Boosting/h20": {
+      "parameters": {
+        "learning_rate": 0.05,
+        "max_depth": 2,
+        "n_estimators": 50
+      },
+      "cv_mae": 16.523701025140124
+    },
+    "ARIMA": {
+      "parameters": {
+        "order": [
+          1,
+          1,
+          0
+        ],
+        "seasonal_order": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "cv_mae_h1": 1.1172337988291974,
+      "fit_warnings": [],
+      "all_history_fit_warnings": []
+    },
+    "SARIMA": {
+      "parameters": {
+        "order": [
+          1,
+          1,
+          0
+        ],
+        "seasonal_order": [
+          0,
+          0,
+          1,
+          5
+        ]
+      },
+      "cv_mae_h1": 1.117708241691233,
+      "fit_warnings": [],
+      "all_history_fit_warnings": []
+    },
+    "Exponential Smoothing": {
+      "parameters": {
+        "trend": false,
+        "damped_trend": false
+      },
+      "cv_mae_h1": 1.1173012614632285,
+      "fit_warnings": [],
+      "all_history_fit_warnings": []
+    }
+  },
+  "python": "3.13.2",
+  "versions": {
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scipy": "1.15.2",
+    "scikit-learn": "1.6.1",
+    "statsmodels": "0.14.4",
+    "matplotlib": "3.10.1",
+    "streamlit": "1.51.0"
+  }
+}

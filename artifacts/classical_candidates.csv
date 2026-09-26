@@ -1,0 +1,8 @@
+model,parameters,cv_mae,status,error,warnings
+ARIMA,"{""order"": [1, 1, 0], ""seasonal_order"": [0, 0, 0, 0]}",1.1172337988291974,ok,,
+ARIMA,"{""order"": [0, 1, 1], ""seasonal_order"": [0, 0, 0, 0]}",1.1173155029758155,ok,,
+ARIMA,"{""order"": [1, 1, 1], ""seasonal_order"": [0, 0, 0, 0]}",1.119681441252063,ok,,Non-invertible starting MA parameters found. Using zeros as starting parameters. | Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+SARIMA,"{""order"": [1, 1, 0], ""seasonal_order"": [1, 0, 0, 5]}",1.1177993564308297,ok,,
+SARIMA,"{""order"": [1, 1, 0], ""seasonal_order"": [0, 0, 1, 5]}",1.117708241691233,ok,,
+Exponential Smoothing,"{""trend"": false, ""damped_trend"": false}",1.1173012614632285,ok,,
+Exponential Smoothing,"{""trend"": true, ""damped_trend"": true}",1.1177595981376545,ok,,

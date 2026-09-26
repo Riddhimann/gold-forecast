@@ -1,0 +1,40 @@
+name: Verify forecasting study
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m ruff check gold_forecast app.py tests
+      - run: python -m pytest -q
+  reproduce:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python -m gold_forecast run
+      - run: python -m pytest -q
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reproduced-study
+          path: |
+            artifacts/*.csv
+            artifacts/*.json
+            artifacts/*.md
+            artifacts/figures/

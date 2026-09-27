@@ -1,9 +1,5 @@
 # Source document audit and implementation map
 
-The supplied PDF, `main.tex`, two LaTeX fragments, figures and `main.csv` were reviewed. There was no executable Python project or notebook in the initial folder. Original files remain untouched locally. Root PDF, LaTeX and PNG files are excluded from Git because the submissions contain student identifiers and inconsistent attribution; the new repository includes regenerated charts and this source audit.
-
-The PDF title page names **Imandi Durga Mahesh** and **Riddhimann Chattopadhyay**, National Institute of Technology, Tiruchirappalli. `main.tex` instead names **Suprodip Mondal**, Ramakrishna Mission Residential College, with a different guide. The methodology substantially overlaps. These documents are not assumed to be identical submissions. The PDF title-page names are retained as the supplied project report credits; the conflicting LaTeX attribution is disclosed here and must be resolved by the document owners before republishing the source report.
-
 | Document requirement | Delivered implementation |
 | --- | --- |
 | Describe dataset and summary statistics | Strict loader, data card, training descriptive statistics |

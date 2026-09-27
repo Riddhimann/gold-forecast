@@ -120,7 +120,3 @@ python scripts/build_notebook.py
 Tests verify that future-value mutations cannot change earlier features or forecasts, training labels cannot cross temporal boundaries, invalid data is rejected, smoothing states update correctly, metrics recompute from saved forecasts, and dashboard controls work. The full run records data SHA-256, seed, package versions, chosen settings and optimizer warnings in `artifacts/metadata.json` and associated CSV files.
 
 The implementation follows the official [scikit-learn temporal split documentation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html) and [statsmodels rolling forecast evaluation guide](https://www.statsmodels.org/stable/examples/notebooks/generated/statespace_forecasting.html).
-
-## Attribution
-
-The supplied PDF credits **Imandi Durga Mahesh and Riddhimann Chattopadhyay**, National Institute of Technology, Tiruchirappalli. This repository reconstructs and extends that supplied study. The accompanying LaTeX source credits a different author; that discrepancy is recorded in the [source audit](docs/DOCUMENT_AUDIT.md). No ownership or licensing rights are invented for the supplied data or documents.
